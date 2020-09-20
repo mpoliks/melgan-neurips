@@ -121,8 +121,8 @@ def main():
         test_audio.append(x_t)
 
         audio = x_t.squeeze().cpu()
-        save_sample(root / ("original_%d.wav" % i), 22050, audio)
-        samples.append(wandb.Audio(audio, caption=f"sample {i}", sample_rate=22050))
+        save_sample(root / ("original_%d.wav" % i), 44100, audio)
+        samples.append(wandb.Audio(audio, caption=f"sample {i}", sample_rate=44100))
 
         if i == args.n_test_samples - 1:
             break
